@@ -1,6 +1,7 @@
 
 __Simple DEMO of adding GIT SCM information and BUILD information to the actuator info endpoint to easily identify deployed versions!!__ 
 
+Highly recommend for all project to be able to precisely tell the exact version of code deployed to an environment as well as build information.
 
 __Hit the actuator /actuator/info endpoint at:__
 
@@ -26,3 +27,14 @@ You should see something simliar to the following ( note that the git properties
 	}
 }
 ```
+
+
+__Maven Notes : __
+
+Maven instructions are available at :
+
+__https://docs.spring.io/spring-boot/docs/current/reference/html/howto-build.html#howto-build-info__
+
+__86.1 Generate Build Information__
+
+__86.2 Generate Git Information__
