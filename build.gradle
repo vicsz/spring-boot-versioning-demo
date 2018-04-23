@@ -10,9 +10,7 @@ buildscript {
 	}
 }
 
-plugins {
-	id "com.gorylenko.gradle-git-properties" version "1.4.17"
-}
+
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -20,13 +18,28 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+
+version = "1.0.0.${System.getenv( 'BUILD_NUMBER' ) ?: 'SNAPSHOT'}"
+
+springBoot {
+	// This statement tells the Gradle Spring Boot plugin
+	// to generate a file
+	// build/resources/main/META-INF/build-info.properties
+	// that is picked up by Spring Boot to display
+	// via /info endpoint.
+	buildInfo()
+}
+
+plugins {
+	// Following plugin will produce git.properties for spring-boot-actuator
+	id "com.gorylenko.gradle-git-properties" version "1.4.17"
+}
+
 sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
 }
-
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-actuator')
