@@ -28,8 +28,7 @@ You should see something simliar to the following ( note that the git properties
 }
 ```
 
-
-__Maven Notes : __
+__ Maven Notes  __
 
 Maven instructions are available at :
 
